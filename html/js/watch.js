@@ -5,12 +5,15 @@ $(() => {
         if (event.data.watch != undefined) {
             let status = event.data.watch
             if (status) {
-                $("#watch").show(250)
-                $(".time").show(250)
+                $("#watch").show(100)
+                $(".time").show(100)
                 //
+                $("#passaport").hide();
+                $("#music").hide();
+                $("#gps").hide();
                 $("#settings").hide();
             } else {
-                $("#watch").hide(250)
+                $("#watch").hide(100)
                 $("#content").hide();
                 $(".time").hide()
             }
@@ -68,6 +71,7 @@ $(() => {
         $("#li5").html("<i class='fas fa-car'></i> " + event.data.cnh + "</li>");
         $("#li6").html("<i class='fas fa-mobile-alt'></i> " + event.data.phone + "</li>");
 
+        /* MUSIC */
     })
 })
 
@@ -104,6 +108,38 @@ function music() {
     $("#music").show()
 }
 
+function player() {
+    $.post('https://GENESEEWatch/action', JSON.stringify({
+        action: 'play'
+    }));
+}
+
+function pause() {
+    $.post('https://GENESEEWatch/action', JSON.stringify({
+        action: 'pause'
+    }));
+}
+
+function less() {
+    $.post('https://GENESEEWatch/action', JSON.stringify({
+        action: 'volume-'
+    }));
+}
+
+function plus() {
+    $.post('https://GENESEEWatch/action', JSON.stringify({
+        action: 'volume+'
+    }));
+}
+
+function timeplay() {
+    $.post('https://GENESEEWatch/action', JSON.stringify({
+        action: 'timeplay'
+    }));
+}
+
+
+
 function gps() {
     $("#activity").hide()
     $("#passaport").hide()
@@ -135,7 +171,6 @@ function changecase() {
     //
 
     $(".menu").css("background", "linear-gradient(180deg, #2c0b0b 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)")
-    $(".menu:hover").css("background", "linear-gradient(180deg, #806C6C 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)")
-    $(".menu:active").css("background", "linear-gradient(180deg, #1A0606 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)")
-
+    $(".passaport").css("background", "linear-gradient(180deg, #2c0b0b 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)")
+    $(".navplayer").css("background", "linear-gradient(180deg, #2c0b0b 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)")
 }

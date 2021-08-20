@@ -56,12 +56,12 @@
                 <div class="timev2">12:00</div>
 
                 <button class="player" onclick="player()"><i class="fas fa-play"></i></button>
-                <button class="stop" onclick="player()"><i class="fas fa-stop"></i></button>
+                <button class="stop" onclick="pause()"><i class="fas fa-pause"></i></button>
 
                 <div class="navplayer">
-                    <div class="less"><b>-</b></div>
-                    <div class="timeplay">0:00 / 0:00</div>
-                    <div class="plus"><b>+</b></div>
+                    <div class="less" onclick="less()"><b>-</b></div>
+                    <div class="timeplay" onclick="timeplay()">0:00 / 0:00</div>
+                    <div class="plus" onclick="plus()"><b>+</b></div>
                 </div>
 
                 <div id="dots3" style="background: rgba(196, 196, 196);"></div>
@@ -95,7 +95,6 @@
             </div>
 
         </div>
-        <!--div id="glass"></div-->
     </div>
 
 </body>

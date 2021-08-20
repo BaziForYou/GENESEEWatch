@@ -15,17 +15,293 @@
         margin: 0;
     }
     body {
-        background-color: gold;
+        background-color: transparent;
+        overflow: hidden;
     }
-}
-
-@media only screen and (max-width: 1280px) {
-    * {
-        padding: 0;
+    div {
+        -webkit-user-select: none;
+        /* Safari */
+        -ms-user-select: none;
+        /* IE 10 and IE 11 */
+        user-select: none;
+        /* Standard syntax */
+    }
+    ul {
+        list-style: none;
         margin: 0;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        margin-top: 115px;
+        height: 100px;
     }
-    body {
-        background-color: brown;
+    ul::-webkit-scrollbar {
+        display: none;
+    }
+    ul li {
+        position: relative;
+        width: 130px;
+        height: 30px;
+        left: 27px;
+        border-radius: 8px;
+        margin-bottom: 5px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 15px;
+        color: #FFFFFF;
+        opacity: 0.5;
+        border: none;
+    }
+    i {
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+    /* CASE */
+    #watch {
+        position: absolute;
+        width: 195px;
+        height: 303px;
+        right: 5vh;
+        bottom: 5vh;
+        background: url(../img/watch.png);
+        background-size: cover;
+        z-index: 1000;
+    }
+    #glass {
+        position: relative;
+        width: 195px;
+        height: 303px;
+        background: url(../img/glass.png);
+        background-size: cover;
+    }
+    /* DOTS */
+    #dots1 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 70px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots2 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 80px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots3 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 90px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots4 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 100px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots5 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 110px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    /* TITLES */
+    #title {
+        position: absolute;
+        width: 130px;
+        height: 15px;
+        left: 35px;
+        top: 90px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    /* TIME */
+    .time {
+        position: absolute;
+        width: 76px;
+        height: 151px;
+        left: 50px;
+        bottom: 70px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 72px;
+        line-height: 84px;
+        letter-spacing: -0.075em;
+        background: transparent;
+        color: #FFFFFF;
+        opacity: 0.4;
+        border: none;
+    }
+    .timev2 {
+        position: absolute;
+        width: 29px;
+        height: 15px;
+        left: 115px;
+        top: 90px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+        color: #FFFFFF;
+        opacity: 0.4;
+    }
+    /* PAGE */
+    #content {
+        display: none;
+    }
+    #activity {
+        display: none;
+    }
+    #passaport {
+        display: none;
+    }
+    #music {
+        display: none;
+    }
+    #gps {
+        display: none;
+    }
+    #settings {
+        display: none;
+    }
+    /* ACTIVITY */
+    #life {
+        position: absolute;
+        left: 47px;
+        bottom: 100px;
+        width: 90px;
+        height: 90px;
+    }
+    #hunger {
+        position: absolute;
+        left: 57px;
+        bottom: 110px;
+        width: 70px;
+        height: 70px;
+    }
+    #thirst {
+        position: absolute;
+        left: 65px;
+        bottom: 118px;
+        width: 54px;
+        height: 54px;
+    }
+    /* PASSPORT */
+    .passaport {
+        background: linear-gradient(180deg, #313131 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
+    }
+    /* MUSIC */
+    .navplayer {
+        position: absolute;
+        width: 114px;
+        height: 22px;
+        left: 35px;
+        top: 185px;
+        background: linear-gradient(180deg, rgba(196, 196, 196, 0.45) 0%, rgba(196, 196, 196, 0) 100%);
+        opacity: 0.5;
+        border-radius: 10px;
+    }
+    .less {
+        position: absolute;
+        width: 9px;
+        height: 35px;
+        top: -5px;
+        left: 11px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 35px;
+        letter-spacing: -0.075em;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    .plus {
+        position: absolute;
+        width: 9px;
+        height: 35px;
+        top: -5px;
+        right: 15px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 35px;
+        letter-spacing: -0.075em;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    .timeplay {
+        position: absolute;
+        width: 100px;
+        height: 2px;
+        top: 6px;
+        left: 30px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        color: #FFFFFF;
+    }
+    .player {
+        position: relative;
+        top: 120px;
+        left: 40px;
+        border: none;
+        background-color: transparent;
+        padding-left: 10px;
+    }
+    .player i {
+        font-size: 40px;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    .stop {
+        position: relative;
+        top: 115px;
+        left: 35px;
+        border: none;
+        background-color: transparent;
+        padding-left: 10px;
+    }
+    .stop i {
+        font-size: 25px;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    /* GPS */
+    /* SETTINGS */
+    .menu {
+        background: linear-gradient(180deg, #313131 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
+    }
+    .menu:hover {
+        background: linear-gradient(180deg, #838383 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
+    }
+    .menu:active {
+        background: linear-gradient(180deg, #1D1D1D 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
     }
 }
 
@@ -35,17 +311,589 @@
         margin: 0;
     }
     body {
-        background-color: purple;
+        background-color: transparent;
+        overflow: hidden;
+    }
+    div {
+        -webkit-user-select: none;
+        /* Safari */
+        -ms-user-select: none;
+        /* IE 10 and IE 11 */
+        user-select: none;
+        /* Standard syntax */
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        margin-top: 115px;
+        height: 100px;
+    }
+    ul::-webkit-scrollbar {
+        display: none;
+    }
+    ul li {
+        position: relative;
+        width: 130px;
+        height: 30px;
+        left: 27px;
+        border-radius: 8px;
+        margin-bottom: 5px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 15px;
+        color: #FFFFFF;
+        opacity: 0.5;
+        border: none;
+    }
+    i {
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+    /* CASE */
+    #watch {
+        position: absolute;
+        width: 195px;
+        height: 303px;
+        right: 5vh;
+        bottom: 5vh;
+        background: url(../img/watch.png);
+        background-size: cover;
+        z-index: 1000;
+    }
+    #glass {
+        position: relative;
+        width: 195px;
+        height: 303px;
+        background: url(../img/glass.png);
+        background-size: cover;
+    }
+    /* DOTS */
+    #dots1 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 70px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots2 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 80px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots3 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 90px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots4 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 100px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots5 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 110px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    /* TITLES */
+    #title {
+        position: absolute;
+        width: 130px;
+        height: 15px;
+        left: 35px;
+        top: 90px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    /* TIME */
+    .time {
+        position: absolute;
+        width: 76px;
+        height: 151px;
+        left: 50px;
+        bottom: 70px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 72px;
+        line-height: 84px;
+        letter-spacing: -0.075em;
+        background: transparent;
+        color: #FFFFFF;
+        opacity: 0.4;
+        border: none;
+    }
+    .timev2 {
+        position: absolute;
+        width: 29px;
+        height: 15px;
+        left: 115px;
+        top: 90px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+        color: #FFFFFF;
+        opacity: 0.4;
+    }
+    /* PAGE */
+    #content {
+        display: none;
+    }
+    #activity {
+        display: none;
+    }
+    #passaport {
+        display: none;
+    }
+    #music {
+        display: none;
+    }
+    #gps {
+        display: none;
+    }
+    #settings {
+        display: none;
+    }
+    /* ACTIVITY */
+    #life {
+        position: absolute;
+        left: 47px;
+        bottom: 100px;
+        width: 90px;
+        height: 90px;
+    }
+    #hunger {
+        position: absolute;
+        left: 57px;
+        bottom: 110px;
+        width: 70px;
+        height: 70px;
+    }
+    #thirst {
+        position: absolute;
+        left: 65px;
+        bottom: 118px;
+        width: 54px;
+        height: 54px;
+    }
+    /* PASSPORT */
+    .passaport {
+        background: linear-gradient(180deg, #313131 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
+    }
+    /* MUSIC */
+    .navplayer {
+        position: absolute;
+        width: 114px;
+        height: 22px;
+        left: 35px;
+        top: 185px;
+        background: linear-gradient(180deg, rgba(196, 196, 196, 0.45) 0%, rgba(196, 196, 196, 0) 100%);
+        opacity: 0.5;
+        border-radius: 10px;
+    }
+    .less {
+        position: absolute;
+        width: 9px;
+        height: 35px;
+        top: -5px;
+        left: 11px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 35px;
+        letter-spacing: -0.075em;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    .plus {
+        position: absolute;
+        width: 9px;
+        height: 35px;
+        top: -5px;
+        right: 15px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 35px;
+        letter-spacing: -0.075em;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    .timeplay {
+        position: absolute;
+        width: 100px;
+        height: 2px;
+        top: 6px;
+        left: 30px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        color: #FFFFFF;
+    }
+    .player {
+        position: relative;
+        top: 120px;
+        left: 40px;
+        border: none;
+        background-color: transparent;
+        padding-left: 10px;
+    }
+    .player i {
+        font-size: 40px;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    .stop {
+        position: relative;
+        top: 115px;
+        left: 35px;
+        border: none;
+        background-color: transparent;
+        padding-left: 10px;
+    }
+    .stop i {
+        font-size: 25px;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    /* GPS */
+    /* SETTINGS */
+    .menu {
+        background: linear-gradient(180deg, #313131 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
+    }
+    .menu:hover {
+        background: linear-gradient(180deg, #838383 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
+    }
+    .menu:active {
+        background: linear-gradient(180deg, #1D1D1D 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
     }
 }
 
-@media only screen and (max-width: 1600px) and (height: 1024px) {
+@media only screen and (min-width: 1440px) and (max-width: 1440px) {
     * {
         padding: 0;
         margin: 0;
     }
     body {
-        background-color: pink;
+        background-color: transparent;
+        overflow: hidden;
+    }
+    div {
+        -webkit-user-select: none;
+        /* Safari */
+        -ms-user-select: none;
+        /* IE 10 and IE 11 */
+        user-select: none;
+        /* Standard syntax */
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        margin-top: 115px;
+        height: 100px;
+    }
+    ul::-webkit-scrollbar {
+        display: none;
+    }
+    ul li {
+        position: relative;
+        width: 130px;
+        height: 30px;
+        left: 27px;
+        border-radius: 8px;
+        margin-bottom: 5px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 15px;
+        color: #FFFFFF;
+        opacity: 0.5;
+        border: none;
+    }
+    i {
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+    /* CASE */
+    #watch {
+        position: absolute;
+        width: 195px;
+        height: 303px;
+        right: 5vh;
+        bottom: 5vh;
+        background: url(../img/watch.png);
+        background-size: cover;
+        z-index: 1000;
+    }
+    #glass {
+        position: relative;
+        width: 195px;
+        height: 303px;
+        background: url(../img/glass.png);
+        background-size: cover;
+    }
+    /* DOTS */
+    #dots1 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 70px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots2 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 80px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots3 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 90px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots4 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 100px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots5 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 110px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    /* TITLES */
+    #title {
+        position: absolute;
+        width: 130px;
+        height: 15px;
+        left: 35px;
+        top: 90px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    /* TIME */
+    .time {
+        position: absolute;
+        width: 76px;
+        height: 151px;
+        left: 50px;
+        bottom: 70px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 72px;
+        line-height: 84px;
+        letter-spacing: -0.075em;
+        background: transparent;
+        color: #FFFFFF;
+        opacity: 0.4;
+        border: none;
+    }
+    .timev2 {
+        position: absolute;
+        width: 29px;
+        height: 15px;
+        left: 115px;
+        top: 90px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+        color: #FFFFFF;
+        opacity: 0.4;
+    }
+    /* PAGE */
+    #content {
+        display: none;
+    }
+    #activity {
+        display: none;
+    }
+    #passaport {
+        display: none;
+    }
+    #music {
+        display: none;
+    }
+    #gps {
+        display: none;
+    }
+    #settings {
+        display: none;
+    }
+    /* ACTIVITY */
+    #life {
+        position: absolute;
+        left: 47px;
+        bottom: 100px;
+        width: 90px;
+        height: 90px;
+    }
+    #hunger {
+        position: absolute;
+        left: 57px;
+        bottom: 110px;
+        width: 70px;
+        height: 70px;
+    }
+    #thirst {
+        position: absolute;
+        left: 65px;
+        bottom: 118px;
+        width: 54px;
+        height: 54px;
+    }
+    /* PASSPORT */
+    .passaport {
+        background: linear-gradient(180deg, #313131 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
+    }
+    /* MUSIC */
+    .navplayer {
+        position: absolute;
+        width: 114px;
+        height: 22px;
+        left: 35px;
+        top: 185px;
+        background: linear-gradient(180deg, rgba(196, 196, 196, 0.45) 0%, rgba(196, 196, 196, 0) 100%);
+        opacity: 0.5;
+        border-radius: 10px;
+    }
+    .less {
+        position: absolute;
+        width: 9px;
+        height: 35px;
+        top: -5px;
+        left: 11px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 35px;
+        letter-spacing: -0.075em;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    .plus {
+        position: absolute;
+        width: 9px;
+        height: 35px;
+        top: -5px;
+        right: 15px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 35px;
+        letter-spacing: -0.075em;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    .timeplay {
+        position: absolute;
+        width: 100px;
+        height: 2px;
+        top: 6px;
+        left: 30px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        color: #FFFFFF;
+    }
+    .player {
+        position: relative;
+        top: 120px;
+        left: 40px;
+        border: none;
+        background-color: transparent;
+        padding-left: 10px;
+    }
+    .player i {
+        font-size: 40px;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    .stop {
+        position: relative;
+        top: 115px;
+        left: 35px;
+        border: none;
+        background-color: transparent;
+        padding-left: 10px;
+    }
+    .stop i {
+        font-size: 25px;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    /* GPS */
+    /* SETTINGS */
+    .menu {
+        background: linear-gradient(180deg, #313131 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
+    }
+    .menu:hover {
+        background: linear-gradient(180deg, #838383 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
+    }
+    .menu:active {
+        background: linear-gradient(180deg, #1D1D1D 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
     }
 }
 
@@ -55,7 +903,589 @@
         margin: 0;
     }
     body {
-        background-color: red;
+        background-color: transparent;
+        overflow: hidden;
+    }
+    div {
+        -webkit-user-select: none;
+        /* Safari */
+        -ms-user-select: none;
+        /* IE 10 and IE 11 */
+        user-select: none;
+        /* Standard syntax */
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        margin-top: 115px;
+        height: 100px;
+    }
+    ul::-webkit-scrollbar {
+        display: none;
+    }
+    ul li {
+        position: relative;
+        width: 130px;
+        height: 30px;
+        left: 27px;
+        border-radius: 8px;
+        margin-bottom: 5px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 15px;
+        color: #FFFFFF;
+        opacity: 0.5;
+        border: none;
+    }
+    i {
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+    /* CASE */
+    #watch {
+        position: absolute;
+        width: 195px;
+        height: 303px;
+        right: 5vh;
+        bottom: 5vh;
+        background: url(../img/watch.png);
+        background-size: cover;
+        z-index: 1000;
+    }
+    #glass {
+        position: relative;
+        width: 195px;
+        height: 303px;
+        background: url(../img/glass.png);
+        background-size: cover;
+    }
+    /* DOTS */
+    #dots1 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 70px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots2 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 80px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots3 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 90px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots4 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 100px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots5 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 110px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    /* TITLES */
+    #title {
+        position: absolute;
+        width: 130px;
+        height: 15px;
+        left: 35px;
+        top: 90px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    /* TIME */
+    .time {
+        position: absolute;
+        width: 76px;
+        height: 151px;
+        left: 50px;
+        bottom: 70px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 72px;
+        line-height: 84px;
+        letter-spacing: -0.075em;
+        background: transparent;
+        color: #FFFFFF;
+        opacity: 0.4;
+        border: none;
+    }
+    .timev2 {
+        position: absolute;
+        width: 29px;
+        height: 15px;
+        left: 115px;
+        top: 90px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+        color: #FFFFFF;
+        opacity: 0.4;
+    }
+    /* PAGE */
+    #content {
+        display: none;
+    }
+    #activity {
+        display: none;
+    }
+    #passaport {
+        display: none;
+    }
+    #music {
+        display: none;
+    }
+    #gps {
+        display: none;
+    }
+    #settings {
+        display: none;
+    }
+    /* ACTIVITY */
+    #life {
+        position: absolute;
+        left: 47px;
+        bottom: 100px;
+        width: 90px;
+        height: 90px;
+    }
+    #hunger {
+        position: absolute;
+        left: 57px;
+        bottom: 110px;
+        width: 70px;
+        height: 70px;
+    }
+    #thirst {
+        position: absolute;
+        left: 65px;
+        bottom: 118px;
+        width: 54px;
+        height: 54px;
+    }
+    /* PASSPORT */
+    .passaport {
+        background: linear-gradient(180deg, #313131 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
+    }
+    /* MUSIC */
+    .navplayer {
+        position: absolute;
+        width: 114px;
+        height: 22px;
+        left: 35px;
+        top: 185px;
+        background: linear-gradient(180deg, rgba(196, 196, 196, 0.45) 0%, rgba(196, 196, 196, 0) 100%);
+        opacity: 0.5;
+        border-radius: 10px;
+    }
+    .less {
+        position: absolute;
+        width: 9px;
+        height: 35px;
+        top: -5px;
+        left: 11px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 35px;
+        letter-spacing: -0.075em;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    .plus {
+        position: absolute;
+        width: 9px;
+        height: 35px;
+        top: -5px;
+        right: 15px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 35px;
+        letter-spacing: -0.075em;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    .timeplay {
+        position: absolute;
+        width: 100px;
+        height: 2px;
+        top: 6px;
+        left: 30px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        color: #FFFFFF;
+    }
+    .player {
+        position: relative;
+        top: 120px;
+        left: 40px;
+        border: none;
+        background-color: transparent;
+        padding-left: 10px;
+    }
+    .player i {
+        font-size: 40px;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    .stop {
+        position: relative;
+        top: 115px;
+        left: 35px;
+        border: none;
+        background-color: transparent;
+        padding-left: 10px;
+    }
+    .stop i {
+        font-size: 25px;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    /* GPS */
+    /* SETTINGS */
+    .menu {
+        background: linear-gradient(180deg, #313131 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
+    }
+    .menu:hover {
+        background: linear-gradient(180deg, #838383 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
+    }
+    .menu:active {
+        background: linear-gradient(180deg, #1D1D1D 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
+    }
+}
+
+@media only screen and (min-width: 1680px) and (max-width: 1680px) {
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    body {
+        background-color: transparent;
+        overflow: hidden;
+    }
+    div {
+        -webkit-user-select: none;
+        /* Safari */
+        -ms-user-select: none;
+        /* IE 10 and IE 11 */
+        user-select: none;
+        /* Standard syntax */
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        margin-top: 115px;
+        height: 100px;
+    }
+    ul::-webkit-scrollbar {
+        display: none;
+    }
+    ul li {
+        position: relative;
+        width: 130px;
+        height: 30px;
+        left: 27px;
+        border-radius: 8px;
+        margin-bottom: 5px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 15px;
+        color: #FFFFFF;
+        opacity: 0.5;
+        border: none;
+    }
+    i {
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+    /* CASE */
+    #watch {
+        position: absolute;
+        width: 195px;
+        height: 303px;
+        right: 5vh;
+        bottom: 5vw;
+        background: url(../img/watch.png);
+        background-size: cover;
+        z-index: 1000;
+    }
+    #glass {
+        position: relative;
+        width: 195px;
+        height: 303px;
+        background: url(../img/glass.png);
+        background-size: cover;
+    }
+    /* DOTS */
+    #dots1 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 70px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots2 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 80px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots3 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 90px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots4 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 100px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    #dots5 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: 225px;
+        left: 110px;
+        background: rgba(196, 196, 196, 0.5);
+        border-radius: 50%;
+    }
+    /* TITLES */
+    #title {
+        position: absolute;
+        width: 130px;
+        height: 15px;
+        left: 35px;
+        top: 90px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    /* TIME */
+    .time {
+        position: absolute;
+        width: 76px;
+        height: 151px;
+        left: 50px;
+        bottom: 70px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 72px;
+        line-height: 84px;
+        letter-spacing: -0.075em;
+        background: transparent;
+        color: #FFFFFF;
+        opacity: 0.4;
+        border: none;
+    }
+    .timev2 {
+        position: absolute;
+        width: 29px;
+        height: 15px;
+        left: 115px;
+        top: 90px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+        color: #FFFFFF;
+        opacity: 0.4;
+    }
+    /* PAGE */
+    #content {
+        display: none;
+    }
+    #activity {
+        display: none;
+    }
+    #passaport {
+        display: none;
+    }
+    #music {
+        display: none;
+    }
+    #gps {
+        display: none;
+    }
+    #settings {
+        display: none;
+    }
+    /* ACTIVITY */
+    #life {
+        position: absolute;
+        left: 47px;
+        bottom: 100px;
+        width: 90px;
+        height: 90px;
+    }
+    #hunger {
+        position: absolute;
+        left: 57px;
+        bottom: 110px;
+        width: 70px;
+        height: 70px;
+    }
+    #thirst {
+        position: absolute;
+        left: 65px;
+        bottom: 118px;
+        width: 54px;
+        height: 54px;
+    }
+    /* PASSPORT */
+    .passaport {
+        background: linear-gradient(180deg, #313131 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
+    }
+    /* MUSIC */
+    .navplayer {
+        position: absolute;
+        width: 114px;
+        height: 22px;
+        left: 35px;
+        top: 185px;
+        background: linear-gradient(180deg, rgba(196, 196, 196, 0.45) 0%, rgba(196, 196, 196, 0) 100%);
+        opacity: 0.5;
+        border-radius: 10px;
+    }
+    .less {
+        position: absolute;
+        width: 9px;
+        height: 35px;
+        top: -5px;
+        left: 11px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 35px;
+        letter-spacing: -0.075em;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    .plus {
+        position: absolute;
+        width: 9px;
+        height: 35px;
+        top: -5px;
+        right: 15px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 35px;
+        letter-spacing: -0.075em;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    .timeplay {
+        position: absolute;
+        width: 100px;
+        height: 2px;
+        top: 6px;
+        left: 30px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        color: #FFFFFF;
+    }
+    .player {
+        position: relative;
+        top: 120px;
+        left: 40px;
+        border: none;
+        background-color: transparent;
+        padding-left: 10px;
+    }
+    .player i {
+        font-size: 40px;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    .stop {
+        position: relative;
+        top: 115px;
+        left: 35px;
+        border: none;
+        background-color: transparent;
+        padding-left: 10px;
+    }
+    .stop i {
+        font-size: 25px;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    /* GPS */
+    /* SETTINGS */
+    .menu {
+        background: linear-gradient(180deg, #313131 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
+    }
+    .menu:hover {
+        background: linear-gradient(180deg, #838383 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
+    }
+    .menu:active {
+        background: linear-gradient(180deg, #1D1D1D 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
     }
 }
 
@@ -119,9 +1549,11 @@
         z-index: 1000;
     }
     #glass {
-        position: relative;
+        position: absolute;
         width: 195px;
         height: 303px;
+        right: 0vh;
+        bottom: 0vh;
         background: url(../img/glass.png);
         background-size: cover;
     }
