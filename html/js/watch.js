@@ -171,6 +171,9 @@ function changecase() {
     //
 
     $(".menu").css("background", "linear-gradient(180deg, #2c0b0b 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)")
+
+    //
+    
     $(".passaport").css("background", "linear-gradient(180deg, #2c0b0b 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)")
     $(".navplayer").css("background", "linear-gradient(180deg, #2c0b0b 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)")
 }

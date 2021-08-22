@@ -16,34 +16,64 @@ local thirst = 100
 
 xSound = exports.xsound
 
+local musicID = "name"
+
 RegisterNUICallback("action", function(data)
     local source = source
     local pos = GetEntityCoords(PlayerPedId())
 
     if data.action == "play" then
-        if xSound:soundExists("name") then
-            if xSound:isPaused("name") then
-                xSound:Resume("name")
-            end
-        else
-            local name, link = Watch.listMusic()
+        if Watch.CheckPermission() then
+            if xSound:soundExists(musicID) then
+                if xSound:isPaused(musicID) then
+                    xSound:Resume(musicID)
+                end
+            else
+                local name, link = Watch.listMusic()
 
-            xSound:PlayUrl("name", link, 0.1, 0)
+                xSound:PlayUrl(musicID, link, 0.1, 0)
+            end
         end
     elseif data.action == "pause" then
-        if xSound:soundExists("name") then
-            if xSound:isPlaying("name") then
-                xSound:Pause("name")
+        if Watch.CheckPermission() then
+            if xSound:soundExists(musicID) then
+                if xSound:isPlaying(musicID) then
+                    xSound:Pause(musicID)
+                end
+            else
+                TriggerEvent("Notify", "Negado", "Nenhuma musica tocando!")
             end
         end
     elseif data.action == "volume-" then
-        xSound:setVolume("name", -0.1)
+        if Watch.CheckPermission() then
+            if xSound:soundExists(musicID) then
+                if xSound:isPlaying(musicID) then
+                    xSound:setVolume(musicID, -0.1)
+                end
+            else
+                TriggerEvent("Notify", "Negado", "Nenhuma musica tocando!")
+            end
+        end
     elseif data.action == "volume+" then
-        xSound:setVolume("name", 0.1)
+        if Watch.CheckPermission() then
+            if xSound:soundExists(musicID) then
+                if xSound:isPlaying(musicID) then
+                    xSound:setVolume(musicID, 0.1)
+                end
+            else
+                TriggerEvent("Notify", "Negado", "Nenhuma musica tocando!")
+            end
+        end
     elseif data.action == "timeplay" then
-        local name, link = Watch.listMusic()
+        if Watch.CheckPermission() then
+            if xSound:soundExists(musicID) then
+                local name, link = Watch.listMusic()
 
-        xSound:PlayUrl("name", link, 0.1, 0)
+                xSound:PlayUrl(musicID, link, 0.1, 0)
+            else
+                TriggerEvent("Notify", "Negado", "Nenhuma musica tocando!")
+            end
+        end
     end
 end)
 
@@ -66,8 +96,14 @@ function calculateTimeDisplay()
     end
 end
 
-RegisterCommand('watch', function()
+if Config.Command then
+    RegisterCommand(Config.CommandControl, function(source, args, rawCommand)
+        show()
+    end)
 
+end
+
+function WatchOn()
     calculateTimeDisplay()
 
     local ped = PlayerPedId()
@@ -78,7 +114,7 @@ RegisterCommand('watch', function()
     local name, firsname, user_id, registration, job, cnh, phone = Watch.Identity()
 
     if onNui then
-        SetNuiFocus(true, true)
+        SetNuiFocus(Config.Focus, Config.Cursor)
         SendNUIMessage({
             watch = true,
 
@@ -123,5 +159,14 @@ RegisterCommand('watch', function()
             vRP._stopAnim(source, false)
         })
     end
+end
 
-end)
+function show()
+    if Config.NeedItem then
+        if Watch.CheckItem() then
+            WatchOn()
+        end
+    else
+        WatchOn()
+    end
+end

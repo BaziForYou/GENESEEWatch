@@ -13,10 +13,12 @@ files {
 
 server_script {
     '@vrp/lib/utils.lua',
-    'server/server.lua'
+    'config/config.lua',
+    'server/server.lua',
 }
 
 client_script {
     '@vrp/lib/utils.lua',
-    'client/client.lua'
+    'config/config.lua',
+    'client/client.lua',
 }
