@@ -19,7 +19,7 @@ Config.NeedItemText = "Você não possui um relogio, adquire na Loja Digitalden.
 ------------------------------------------------------------------
 -- Music
 ------------------------------------------------------------------
-Config.MusicPermission = "mecanico.permissao" -- ativar a necessidade de permisao para usar o sistema de musica, para desativar mude o "" para nil
+Config.MusicPermission = "som.permissao" -- ativar a necessidade de permisao para usar o sistema de musica, para desativar mude o "" para nil
 Config.MusicPermissionText = "Você não possui permissao para usar nosso player de musica."
 
 ------------------------------------------------------------------
