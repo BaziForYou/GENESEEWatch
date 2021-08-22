@@ -297,12 +297,6 @@
     .menu {
         background: linear-gradient(180deg, #313131 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
     }
-    .menu:hover {
-        background: linear-gradient(180deg, #838383 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
-    }
-    .menu:active {
-        background: linear-gradient(180deg, #1D1D1D 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
-    }
 }
 
 @media only screen and (min-width: 1366px) and (max-width: 1366px) {
@@ -592,12 +586,6 @@
     /* SETTINGS */
     .menu {
         background: linear-gradient(180deg, #313131 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
-    }
-    .menu:hover {
-        background: linear-gradient(180deg, #838383 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
-    }
-    .menu:active {
-        background: linear-gradient(180deg, #1D1D1D 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
     }
 }
 
@@ -889,12 +877,6 @@
     .menu {
         background: linear-gradient(180deg, #313131 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
     }
-    .menu:hover {
-        background: linear-gradient(180deg, #838383 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
-    }
-    .menu:active {
-        background: linear-gradient(180deg, #1D1D1D 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
-    }
 }
 
 @media only screen and (min-width: 1600px) and (max-width: 1600px) {
@@ -1185,12 +1167,6 @@
     .menu {
         background: linear-gradient(180deg, #313131 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
     }
-    .menu:hover {
-        background: linear-gradient(180deg, #838383 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
-    }
-    .menu:active {
-        background: linear-gradient(180deg, #1D1D1D 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
-    }
 }
 
 @media only screen and (min-width: 1680px) and (max-width: 1680px) {
@@ -1480,12 +1456,6 @@
     /* SETTINGS */
     .menu {
         background: linear-gradient(180deg, #313131 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
-    }
-    .menu:hover {
-        background: linear-gradient(180deg, #838383 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
-    }
-    .menu:active {
-        background: linear-gradient(180deg, #1D1D1D 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
     }
 }
 
@@ -1779,11 +1749,5 @@
     /* SETTINGS */
     .menu {
         background: linear-gradient(180deg, #313131 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
-    }
-    .menu:hover {
-        background: linear-gradient(180deg, #838383 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
-    }
-    .menu:active {
-        background: linear-gradient(180deg, #1D1D1D 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%);
     }
 }

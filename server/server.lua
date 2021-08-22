@@ -27,11 +27,15 @@ function Watch.CheckPermission()
     local source = source
     local user_id = vRP.getUserId(source)
     if user_id then
-        if vRP.hasPermission(user_id, Config.MusicPermission) then
-            return true
+        if Config.MusicPermission then
+            if vRP.hasPermission(user_id, Config.MusicPermissionType) then
+                return true
+            else
+                TriggerClientEvent("Notify", source, "Negado", Config.MusicPermissionText)
+                return false
+            end
         else
-            TriggerClientEvent("Notify", source, "Negado", Config.MusicPermissionText)
-            return false
+            return true
         end
     end
 end

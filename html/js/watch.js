@@ -120,6 +120,12 @@ function pause() {
     }));
 }
 
+function stopMusic() {
+    $.post('https://GENESEEWatch/action', JSON.stringify({
+        action: 'stop'
+    }));
+}
+
 function less() {
     $.post('https://GENESEEWatch/action', JSON.stringify({
         action: 'volume-'
@@ -158,22 +164,89 @@ function settings() {
     $("#settings").show()
 }
 
+const colours = [{ // Vermelho
+        width: '195px',
+        height: '303px',
+        right: '5vh',
+        bottom: '5vh',
+        backgroundimg: 'url(img/watch_red.png)',
+        background: 'linear-gradient(180deg, #990000 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)',
+    },
+    { // Verde
+        width: '195px',
+        height: '303px',
+        right: '5vh',
+        bottom: '5vh',
+        backgroundimg: 'url(img/watch_green.png)',
+        background: 'linear-gradient(180deg, #004C00 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)',
+    }, { // Azul
+        width: '195px',
+        height: '303px',
+        right: '5vh',
+        bottom: '5vh',
+        backgroundimg: 'url(img/watch_blue.png)',
+        background: 'linear-gradient(180deg, #000099 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)',
+    }, { // Branco
+        width: '195px',
+        height: '303px',
+        right: '5vh',
+        bottom: '5vh',
+        backgroundimg: 'url(img/watch_white.png)',
+        background: 'linear-gradient(180deg, #999999 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)',
+    }, { // Ouro
+        width: '195px',
+        height: '303px',
+        right: '5vh',
+        bottom: '5vh',
+        backgroundimg: 'url(img/watch_gold.png)',
+        background: 'linear-gradient(180deg, #998100 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)',
+    }, { // Cinza
+        width: '195px',
+        height: '303px',
+        right: '5vh',
+        bottom: '5vh',
+        backgroundimg: 'url(img/watch.png)',
+        background: 'linear-gradient(180deg, #333333 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)',
+    }
+
+]
+
+let selectedColor = 0;
+
 function changecase() {
 
-    $("#watch").css("width", "195px")
-    $("#watch").css("height", "303px")
-    $("#watch").css("right", "5vh")
-    $("#watch").css("bottom", "5vh")
-    $("#watch").css("background", "url(img/watch_red.png)")
+    let style = colours[selectedColor];
+
+    $("#watch").css("width", style.width)
+    $("#watch").css("height", style.height)
+    $("#watch").css("right", style.right)
+    $("#watch").css("bottom", style.bottom)
+    $("#watch").css("background", style.backgroundimg)
     $("#watch").css("background-size", "cover")
-    $("#watch").css("z-index", "1000")
+    $("#watch").css("z-index", "999")
 
     //
 
-    $(".menu").css("background", "linear-gradient(180deg, #2c0b0b 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)")
+    $(".menu").css("background", style.background)
 
     //
-    
-    $(".passaport").css("background", "linear-gradient(180deg, #2c0b0b 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)")
-    $(".navplayer").css("background", "linear-gradient(180deg, #2c0b0b 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)")
+
+    $(".passaport").css("background", style.background)
+    $(".navplayer").css("background", style.background)
+
+    style = nextcolor()
+}
+
+function nextcolor() {
+    selectedColor++;
+    if (selectedColor >= colours.length) selectedColor = 0
+    return colours[selectedColor]
+}
+
+document.onkeyup = function (data) {
+    if (data.which == 27) {
+        $.post('https://GENESEEWatch/action', JSON.stringify({
+            action: 'CloseNUI'
+        }));
+    }
 }

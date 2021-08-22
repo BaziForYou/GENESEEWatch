@@ -44,6 +44,14 @@ RegisterNUICallback("action", function(data)
                 TriggerEvent("Notify", "Negado", "Nenhuma musica tocando!")
             end
         end
+    elseif data.action == "stop" then
+        if Watch.CheckPermission() then
+            if xSound:soundExists(musicID) then
+                xSound:Destroy(musicID)
+            else
+                TriggerEvent("Notify", "Negado", "Nenhuma musica tocando!")
+            end
+        end
     elseif data.action == "volume-" then
         if Watch.CheckPermission() then
             if xSound:soundExists(musicID) then
@@ -74,11 +82,18 @@ RegisterNUICallback("action", function(data)
                 TriggerEvent("Notify", "Negado", "Nenhuma musica tocando!")
             end
         end
+    elseif data.action == "CloseNUI" then
+        SetNuiFocus(false)
+        SendNUIMessage({
+            watch = false,
+
+            vRP._stopAnim(source, false)
+        })
     end
 end)
 
-RegisterNetEvent("vrp_hud:update")
-AddEventHandler("vrp_hud:update", function(rHunger, rThirst)
+RegisterNetEvent("Config.hungerthirst")
+AddEventHandler("Config.hungerthirst", function(rHunger, rThirst)
     hunger, thirst = 1.0 - (rHunger / 100), 1.0 - (rThirst / 100)
 end)
 
@@ -100,10 +115,31 @@ if Config.Command then
     RegisterCommand(Config.CommandControl, function(source, args, rawCommand)
         show()
     end)
+end
 
+if Config.Bind then
+    Citizen.CreateThread(function()
+        while true do
+            Citizen.Wait(0)
+            if IsControlJustPressed(1, Config.BindControl) then
+                show()
+            end
+        end
+    end)
+end
+
+function show()
+    if Config.NeedItem then
+        if Watch.CheckItem() then
+            WatchOn()
+        end
+    else
+        WatchOn()
+    end
 end
 
 function WatchOn()
+    IsAimCamActive(true)
     calculateTimeDisplay()
 
     local ped = PlayerPedId()
@@ -158,15 +194,5 @@ function WatchOn()
 
             vRP._stopAnim(source, false)
         })
-    end
-end
-
-function show()
-    if Config.NeedItem then
-        if Watch.CheckItem() then
-            WatchOn()
-        end
-    else
-        WatchOn()
     end
 end
