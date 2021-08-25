@@ -83,17 +83,12 @@ RegisterNUICallback("action", function(data)
             end
         end
     elseif data.action == "CloseNUI" then
-        SetNuiFocus(false)
-        SendNUIMessage({
-            watch = false,
-
-            vRP._stopAnim(source, false)
-        })
+        show()
     end
 end)
 
-RegisterNetEvent("Config.hungerthirst")
-AddEventHandler("Config.hungerthirst", function(rHunger, rThirst)
+RegisterNetEvent(Config.hungerthirst)
+AddEventHandler(Config.hungerthirst, function(rHunger, rThirst)
     hunger, thirst = 1.0 - (rHunger / 100), 1.0 - (rThirst / 100)
 end)
 
@@ -108,6 +103,13 @@ function calculateTimeDisplay()
 
     if minute <= 9 then
         minute = "0" .. minute
+    end
+end
+
+function calculateTimeMusic()
+    if xSound:soundExists(musicID) then
+        played = xSound:getTimeStamp(musicID)
+        total = xSound:getMaxDuration(musicID)
     end
 end
 
@@ -139,11 +141,13 @@ function show()
 end
 
 function WatchOn()
-    IsAimCamActive(true)
-    calculateTimeDisplay()
+    local source = source
 
     local ped = PlayerPedId()
     local life = (GetEntityHealth(ped) - 100) / 300 * 100
+
+    calculateTimeDisplay()
+    calculateTimeMusic()
 
     onNui = not onNui
 
@@ -169,6 +173,9 @@ function WatchOn()
             cnh = cnh,
             phone = phone,
 
+            total = total,
+            played = played,
+
             vRP._playAnim(true, {{"anim@random@shop_clothes@watches", "idle_d"}}, true)
 
         })
@@ -191,6 +198,9 @@ function WatchOn()
             job = job,
             cnh = cnh,
             phone = phone,
+
+            total = total,
+            played = played,
 
             vRP._stopAnim(source, false)
         })

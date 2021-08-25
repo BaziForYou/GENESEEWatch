@@ -1,5 +1,5 @@
 $(() => {
-    $("#watch").hide()
+    $("#watch").show()
 
     window.addEventListener("message", function (event) {
         if (event.data.watch != undefined) {
@@ -72,8 +72,38 @@ $(() => {
         $("#li6").html("<i class='fas fa-mobile-alt'></i> " + event.data.phone + "</li>");
 
         /* MUSIC */
+        getTime(event.data.total, event.data.played);
     })
 })
+
+function getTime(totaltime, timeplayed) {
+    if (totaltime != undefined && timeplayed != undefined) {
+        if (secondsToHms(timeplayed) > secondsToHms(totaltime)) {
+            timeplayed = timeplayed - 1
+        }
+        document.getElementById("timeplay").innerHTML = secondsToHms(timeplayed) + " / " + secondsToHms(totaltime);
+    } else {
+        document.getElementById("timeplay").innerHTML = "0:00 / 0:00"
+    }
+}
+
+function secondsToHms(d) {
+    d = Number(d);
+    var h = Math.floor(d / 3600);
+    var m = Math.floor(d % 3600 / 60);
+    var s = Math.floor(d % 3600 % 60);
+
+    var hDisplay = h > 0 ? h + ":" : "";
+    var mDisplay = m > 0 ? m + ":" : "0:";
+    var sDisplay = "00"
+    if (s > 0) {
+        sDisplay = s
+        if (s < 10) {
+            sDisplay = "0" + s
+        }
+    }
+    return (hDisplay + mDisplay + sDisplay);
+}
 
 function time() {
     $(".time").hide()
@@ -97,6 +127,7 @@ function passaport() {
     $("#settings").hide()
     //
     $("#passaport").show()
+
 }
 
 function music() {
@@ -143,8 +174,6 @@ function timeplay() {
         action: 'timeplay'
     }));
 }
-
-
 
 function gps() {
     $("#activity").hide()

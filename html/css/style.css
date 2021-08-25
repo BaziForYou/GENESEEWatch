@@ -254,7 +254,7 @@
         color: #FFFFFF;
         opacity: 0.5;
     }
-    .timeplay {
+    #timeplay {
         position: absolute;
         width: 100px;
         height: 2px;
@@ -544,7 +544,7 @@
         color: #FFFFFF;
         opacity: 0.5;
     }
-    .timeplay {
+    #timeplay {
         position: absolute;
         width: 100px;
         height: 2px;
@@ -834,7 +834,7 @@
         color: #FFFFFF;
         opacity: 0.5;
     }
-    .timeplay {
+    #timeplay {
         position: absolute;
         width: 100px;
         height: 2px;
@@ -1124,7 +1124,7 @@
         color: #FFFFFF;
         opacity: 0.5;
     }
-    .timeplay {
+    #timeplay {
         position: absolute;
         width: 100px;
         height: 2px;
@@ -1414,7 +1414,7 @@
         color: #FFFFFF;
         opacity: 0.5;
     }
-    .timeplay {
+    #timeplay {
         position: absolute;
         width: 100px;
         height: 2px;
@@ -1707,7 +1707,7 @@
         color: #FFFFFF;
         opacity: 0.5;
     }
-    .timeplay {
+    #timeplay {
         position: absolute;
         width: 100px;
         height: 2px;
