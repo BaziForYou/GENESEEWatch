@@ -1,5 +1,5 @@
 $(() => {
-    $("#watch").show()
+    $("#watch").hide()
 
     window.addEventListener("message", function (event) {
         if (event.data.watch != undefined) {
@@ -76,41 +76,13 @@ $(() => {
     })
 })
 
-function getTime(totaltime, timeplayed) {
-    if (totaltime != undefined && timeplayed != undefined) {
-        if (secondsToHms(timeplayed) > secondsToHms(totaltime)) {
-            timeplayed = timeplayed - 1
-        }
-        document.getElementById("timeplay").innerHTML = secondsToHms(timeplayed) + " / " + secondsToHms(totaltime);
-    } else {
-        document.getElementById("timeplay").innerHTML = "0:00 / 0:00"
-    }
-}
-
-function secondsToHms(d) {
-    d = Number(d);
-    var h = Math.floor(d / 3600);
-    var m = Math.floor(d % 3600 / 60);
-    var s = Math.floor(d % 3600 % 60);
-
-    var hDisplay = h > 0 ? h + ":" : "";
-    var mDisplay = m > 0 ? m + ":" : "0:";
-    var sDisplay = "00"
-    if (s > 0) {
-        sDisplay = s
-        if (s < 10) {
-            sDisplay = "0" + s
-        }
-    }
-    return (hDisplay + mDisplay + sDisplay);
-}
-
 function time() {
     $(".time").hide()
     $("#content").show()
     $("#activity").show()
 }
 
+/* ACTIVITY */
 function activity() {
     $("#passaport").hide()
     $("#music").hide()
@@ -120,6 +92,7 @@ function activity() {
     $("#activity").show()
 }
 
+/* PASSAPORT */
 function passaport() {
     $("#activity").hide()
     $("#music").hide()
@@ -130,6 +103,7 @@ function passaport() {
 
 }
 
+/* MUSIC */
 function music() {
     $("#activity").hide()
     $("#passaport").hide()
@@ -175,6 +149,36 @@ function timeplay() {
     }));
 }
 
+function getTime(totaltime, timeplayed) {
+    if (totaltime != undefined && timeplayed != undefined) {
+        if (secondsToHms(timeplayed) > secondsToHms(totaltime)) {
+            timeplayed = timeplayed - 1
+        }
+        document.getElementById("timeplay").innerHTML = secondsToHms(timeplayed) + " / " + secondsToHms(totaltime);
+    } else {
+        document.getElementById("timeplay").innerHTML = "0:00 / 0:00"
+    }
+}
+
+function secondsToHms(d) {
+    d = Number(d);
+    var h = Math.floor(d / 3600);
+    var m = Math.floor(d % 3600 / 60);
+    var s = Math.floor(d % 3600 % 60);
+
+    var hDisplay = h > 0 ? h + ":" : "";
+    var mDisplay = m > 0 ? m + ":" : "0:";
+    var sDisplay = "00"
+    if (s > 0) {
+        sDisplay = s
+        if (s < 10) {
+            sDisplay = "0" + s
+        }
+    }
+    return (hDisplay + mDisplay + sDisplay);
+}
+
+/* GPS */
 function gps() {
     $("#activity").hide()
     $("#passaport").hide()
@@ -184,6 +188,13 @@ function gps() {
     $("#gps").show()
 }
 
+function gpsshow() {
+    $.post('https://GENESEEWatch/GPS', JSON.stringify({
+        action: 'acessar'
+    }));
+}
+
+/* SETTINGS */
 function settings() {
     $("#activity").hide()
     $("#passaport").hide()
@@ -198,7 +209,7 @@ const colours = [{ // Vermelho
         height: '303px',
         right: '5vh',
         bottom: '5vh',
-        backgroundimg: 'url(img/watch_red.png)',
+        backgroundimg: 'url(img/case/watch_red.png)',
         background: 'linear-gradient(180deg, #990000 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)',
     },
     { // Verde
@@ -206,35 +217,35 @@ const colours = [{ // Vermelho
         height: '303px',
         right: '5vh',
         bottom: '5vh',
-        backgroundimg: 'url(img/watch_green.png)',
+        backgroundimg: 'url(img/case/watch_green.png)',
         background: 'linear-gradient(180deg, #004C00 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)',
     }, { // Azul
         width: '195px',
         height: '303px',
         right: '5vh',
         bottom: '5vh',
-        backgroundimg: 'url(img/watch_blue.png)',
+        backgroundimg: 'url(img/case/watch_blue.png)',
         background: 'linear-gradient(180deg, #000099 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)',
     }, { // Branco
         width: '195px',
         height: '303px',
         right: '5vh',
         bottom: '5vh',
-        backgroundimg: 'url(img/watch_white.png)',
+        backgroundimg: 'url(img/case/watch_white.png)',
         background: 'linear-gradient(180deg, #999999 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)',
     }, { // Ouro
         width: '195px',
         height: '303px',
         right: '5vh',
         bottom: '5vh',
-        backgroundimg: 'url(img/watch_gold.png)',
+        backgroundimg: 'url(img/case/watch_gold.png)',
         background: 'linear-gradient(180deg, #998100 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)',
     }, { // Cinza
         width: '195px',
         height: '303px',
         right: '5vh',
         bottom: '5vh',
-        backgroundimg: 'url(img/watch.png)',
+        backgroundimg: 'url(img/case/watch.png)',
         background: 'linear-gradient(180deg, #333333 0%, rgba(49, 49, 49, 0.1) 83.33%, rgba(49, 49, 49, 0) 100%)',
     }
 
@@ -263,6 +274,10 @@ function changecase() {
     $(".passaport").css("background", style.background)
     $(".navplayer").css("background", style.background)
 
+    //
+
+    $(".gps").css("background", style.background)
+
     style = nextcolor()
 }
 
@@ -272,6 +287,8 @@ function nextcolor() {
     return colours[selectedColor]
 }
 
+
+/* NUI */
 document.onkeyup = function (data) {
     if (data.which == 27) {
         $.post('https://GENESEEWatch/action', JSON.stringify({

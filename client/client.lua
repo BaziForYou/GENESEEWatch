@@ -7,6 +7,10 @@ Watch = Tunnel.getInterface("GENESEEWatch")
 local onNui = false
 local watch = false
 
+local minimap = false
+
+DisplayRadar(minimap)
+
 local hour = 0
 local minute = 0
 
@@ -87,10 +91,29 @@ RegisterNUICallback("action", function(data)
     end
 end)
 
-RegisterNetEvent(Config.hungerthirst)
-AddEventHandler(Config.hungerthirst, function(rHunger, rThirst)
-    hunger, thirst = 1.0 - (rHunger / 100), 1.0 - (rThirst / 100)
+RegisterNUICallback("GPS", function(data)
+    if data.action == "acessar" then
+        showGPS()
+    end
 end)
+
+function baseSystem()
+    if Config.basesystemType == 1 then
+
+        RegisterNetEvent("vrp_hud:update")
+        AddEventHandler("vrp_hud:update", function(rHunger, rThirst)
+            hunger, thirst = 1.0 - (rHunger / 100), 1.0 - (rThirst / 100)
+        end)
+
+    elseif Config.basesystemType == 2 then
+
+        RegisterNetEvent("hud:update")
+        AddEventHandler("hud:update", function(rHunger, rThirst)
+            hunger, thirst = rHunger, rThirst
+        end)
+
+    end
+end
 
 function calculateTimeDisplay()
 
@@ -111,6 +134,12 @@ function calculateTimeMusic()
         played = xSound:getTimeStamp(musicID)
         total = xSound:getMaxDuration(musicID)
     end
+end
+
+function showGPS()
+    DisplayRadar(true)
+    Wait(Config.MiniMapDuration)
+    DisplayRadar(false)
 end
 
 if Config.Command then
@@ -148,6 +177,8 @@ function WatchOn()
 
     calculateTimeDisplay()
     calculateTimeMusic()
+
+    baseSystem()
 
     onNui = not onNui
 

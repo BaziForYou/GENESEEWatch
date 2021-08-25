@@ -111,7 +111,6 @@ function StopServer()
         end
     end
 end
-
 local segundos = 0
 local ipvps = '000.00.000.00'
 local script = tostring(GetCurrentResourceName())
