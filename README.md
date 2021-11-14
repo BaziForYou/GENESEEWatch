@@ -5,7 +5,10 @@ Script feito para substituir a HUD padrao, deixando o servidor mais imersivo
 Como configurar?
 Baixar, descompactar e mova GENESEEWatch para a pasta [resoucer]/
 
+Para o player de musica funcionar instale o [xSound](https://github.com/Xogy/xsound)
+
 Adicione as seguintes linhas no seu server.cfg
+- ensure xsound
 - ensure GENESEEWatch
 
 Você pode configurar utilizando o arquivo config/config.lua
